@@ -1,15 +1,18 @@
-<div class="sl-toolbar">
-  <div class="sl-menu-space" [hidden]="!sidenav.isToogled">
-    <div class="sl-menu-btn" (click)="sidenav.toogle()"></div>
-    <div class="sl-menu-separation"></div>
-  </div>
-  <div class="sl-firm">
-    <div class="sl-firm-icon"></div>
-    <div class="sl-firm-name"></div>
-  </div>
-  <div class="sl-empty-space"></div>
-  <div class="sl-more-space">
-    <div class="sl-more-separation"></div>
-    <div class="sl-more-btn"></div>
-  </div>
-</div>
+<md-toolbar color="primary">
+    <!--
+    <div class="sl-menu-space" [hidden]="!sidenav.isToogled">
+      <button md-icon-button (click)="sidenav.toogle()">
+        <md-icon svgIcon="menu" color="white"></md-icon>
+      </button>
+      <div class="sl-menu-separation"></div>
+    </div>
+    -->
+    <button md-button class="white-transparent">
+      <md-icon svgIcon="headset"></md-icon>
+      <span class="sl-firm-name">SONGLIB</span>
+    </button>
+    <span class="sl-empty-space"></span>
+    <button md-icon-button class="white-transparent">
+      <md-icon svgIcon="search"></md-icon>
+    </button>
+</md-toolbar>

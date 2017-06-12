@@ -1,5 +1,9 @@
-<sl-sidenav [hidden]="sidenav.isToogled"></sl-sidenav>
-<div class="sl-main">
-  <sl-toolbar></sl-toolbar>
-  <sl-library></sl-library>
-</div>
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side" opened="true">
+    <sl-drawer></sl-drawer>
+  </md-sidenav>
+  <div class="sl-content">
+    <sl-toolbar></sl-toolbar>
+    <sl-library></sl-library>
+  </div>
+</md-sidenav-container>
