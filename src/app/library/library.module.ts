@@ -8,6 +8,7 @@ import {
 } from '@angular/material';
 
 import { SongLibraryComponent } from './library.component';
+import { SongComponent } from './song/song.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SongLibraryComponent } from './library.component';
     MdListModule
   ],
   declarations: [
-    SongLibraryComponent
+    SongLibraryComponent,
+    SongComponent
   ],
   exports: [
     SongLibraryComponent

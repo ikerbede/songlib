@@ -1,0 +1,38 @@
+<span id="sl-song-content" [class.sl-song-checked]="checked">
+  <span id="sl-song-start">
+    <md-icon id="sl-song-track-icon" svgIcon="audiotrack" *ngIf="!checked"></md-icon>
+    <button md-icon-button id="sl-song-checkbox-unchecked" *ngIf="!checked" (click)="checkSong()">
+      <md-icon svgIcon="check_box_outline_blank"></md-icon>
+    </button>
+    <button md-icon-button *ngIf="checked" (click)="uncheckSong()">
+      <md-icon svgIcon="check_box"></md-icon>
+    </button>
+  </span>
+  <span id="sl-song-details">
+    <h3>{{ song.title }}</h3>
+    <h3>{{ song.author }}</h3>
+    <h3>{{ song.listenings }}</h3> <!-- Nb d'écoute -->
+  </span>
+  <span id="sl-song-actions">
+    <button md-icon-button>
+      <md-icon svgIcon="download"></md-icon>
+    </button>
+    <button md-icon-button>
+      <md-icon svgIcon="description"></md-icon>
+    </button>
+    <button md-icon-button>
+      <md-icon svgIcon="edit"></md-icon>
+    </button>
+    <button md-icon-button>
+      <md-icon svgIcon="delete"></md-icon>
+    </button>
+  </span>
+  <span id="sl-song-favorite">
+    <button md-icon-button id="sl-song-favorite-unchecked" (click)="makeFavorite()" *ngIf="!song.isFavorite">
+      <md-icon svgIcon="favorite_border"></md-icon>
+    </button>
+    <button md-icon-button (click)="makeFavorite()" *ngIf="song.isFavorite">
+      <md-icon svgIcon="favorite"></md-icon>
+    </button>
+  </span>
+</span>

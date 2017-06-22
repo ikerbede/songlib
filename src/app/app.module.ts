@@ -13,6 +13,9 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { DrawerModule } from './drawer/drawer.module';
 import { SongLibraryModule } from './library/library.module';
 
+// Shared
+import { IconService } from './shared/icon.service';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -26,7 +29,7 @@ import { AppComponent } from './app.component';
     DrawerModule,
     SongLibraryModule
   ],
-  providers: [],
+  providers: [IconService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

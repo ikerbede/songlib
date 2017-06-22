@@ -1,29 +1,5 @@
 <md-list class="sl-library">
-  <md-list-item>
-    <span class="sl-track-actions-start">
-      <md-icon svgIcon="audiotrack" md-list-icon></md-icon>
-      <button md-icon-button>
-        <md-icon svgIcon="play" md-list-icon></md-icon>
-      </button>
-    </span>
-    <span class="sl-track-details">
-      <h3>Titre 1</h3>
-      <h3>Auteur 1</h3>
-      <h3>15</h3> <!-- Nb d'écoute -->
-    </span>
-    <span class="sl-track-actions-end">
-      <button md-icon-button>
-        <md-icon svgIcon="favorite-border"></md-icon>
-      </button>
-      <button md-icon-button>
-        <md-icon svgIcon="download"></md-icon>
-      </button>
-      <button md-icon-button>
-        <md-icon svgIcon="lyrics"></md-icon>
-      </button>
-      <button md-icon-button>
-        <md-icon svgIcon="delete"></md-icon>
-      </button>
-    </span>
+  <md-list-item *ngFor="let song of songs">
+    <sl-song (selectedSong)="addSelectedSong(song)" [song]="song"></sl-song>
   </md-list-item>
 </md-list>

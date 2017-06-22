@@ -1,9 +1,6 @@
-.sl-track-actions-start {
-  display: flex;
-  align-items: center;
+md-list-item {
+  height: 61px;
 }
-.sl-track-details {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: space-around;
+sl-song {
+  width: 100%;
 }

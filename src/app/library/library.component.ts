@@ -1,42 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
+
+import { Song } from './shared/song';
+import { LibraryService } from './shared/library.service';
 
 @Component({
   selector: 'sl-library',
   templateUrl: './library.component.html',
-  styleUrls: ['./library.component.scss']
+  styleUrls: ['./library.component.scss'],
+  providers: [LibraryService]
 })
 export class SongLibraryComponent implements OnInit {
+  songs: Song[];
+  selectedSongs: Song[];
 
-  constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'audiotrack',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/icons/audiotrack.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'delete',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/icons/delete.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'download',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/icons/download.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'favorite-border',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/icons/favorite_border.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'lyrics',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/icons/description.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'play',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/icons/play_arrow.svg')
-    );
-  }
+  constructor(private libraryService: LibraryService) {};
 
   ngOnInit() {
+    this.getSongs();
+  }
+
+  getSongs() {
+    return this.libraryService.getSongs().then(songs => this.songs = songs);
   }
 
 }
