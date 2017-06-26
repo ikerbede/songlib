@@ -12,8 +12,7 @@ export class ToolbarComponent implements OnInit {
   constructor(private iconService: IconService) {
     iconService.addSvgIcons([
       'headset',
-      'menu',
-      'search'
+      'menu'
     ]);
   }
 

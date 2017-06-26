@@ -1,16 +1,12 @@
-<md-toolbar class="sl-drawer-header">
-  <md-toolbar-row class="sl-user">
-    <div class="sl-user-avatar">
-      <img src="assets/images/avatars/iker_bedecarrax.png" alt="Iker Bedecarrax"/>
+<md-toolbar id="sl-drawer-header">
+  <md-toolbar-row id="sl-user">
+    <div id="sl-user-avatar">
+      <img src="{{user.avatarUrl}}" alt="{{user.name}}"/>
     </div>
-    <span class="sl-user-name">Iker Bedecarrax</span>
-    <span class="sl-empty-space"></span>
-    <button md-icon-button class="sl-action-logout">
-      <md-icon svgIcon="logout"></md-icon>
-    </button>
+    <span id="sl-user-name">{{ user.name }}</span>
   </md-toolbar-row>
 </md-toolbar>
-<md-list class="sl-drawer-content">
+<md-list id="sl-drawer-content">
   <md-list-item>
     <md-icon svgIcon="star" md-list-icon></md-icon>
     <h3 md-line>Most listened</h3>
@@ -24,8 +20,8 @@
     <h3 md-line>Playlists</h3>
   </md-list-item>
 </md-list>
-<div class="sl-drawer-footer" color="primary">
-  <button md-fab class="sl-action-login">
-    <md-icon svgIcon="account_circle" class="sl-avatar-default"></md-icon>
+<div id="sl-drawer-footer" color="primary">
+  <button md-fab id="sl-action-logout" (click)="logOut()">
+    <md-icon svgIcon="exit_to_app" class="sl-avatar-default"></md-icon>
   </button>
 </div>

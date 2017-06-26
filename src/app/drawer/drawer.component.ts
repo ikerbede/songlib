@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { IconService } from '../shared/icon.service';
+import { User } from '../user/user';
 
 @Component({
   selector: 'sl-drawer',
@@ -8,19 +9,22 @@ import { IconService } from '../shared/icon.service';
   styleUrls: ['./drawer.component.scss']
 })
 export class DrawerComponent implements OnInit {
+  @Input() user: User;
 
   constructor(private iconService: IconService) {
     iconService.addSvgIcons([
       'account_circle',
+      'exit_to_app',
       'favorite',
       'library_music',
-      'login',
-      'logout',
       'star'
     ]);
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  logOut() {
+    console.log('User logged out!')
   }
 
 }

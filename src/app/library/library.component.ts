@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IconService } from '../shared/icon.service';
+
 import { Song } from './shared/song';
 import { LibraryService } from './shared/library.service';
 
@@ -13,7 +15,11 @@ export class SongLibraryComponent implements OnInit {
   songs: Song[];
   selectedSongs: Song[];
 
-  constructor(private libraryService: LibraryService) {};
+  constructor(private libraryService: LibraryService, private iconService: IconService) {
+    iconService.addSvgIcons([
+      'search'
+    ]);
+  };
 
   ngOnInit() {
     this.getSongs();

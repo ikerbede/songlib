@@ -1,6 +1,6 @@
 <md-sidenav-container>
   <md-sidenav #sidenav mode="side" opened="true">
-    <sl-drawer></sl-drawer>
+    <sl-drawer [user]="user" *ngIf="user"></sl-drawer>
   </md-sidenav>
   <div class="sl-content">
     <sl-toolbar></sl-toolbar>

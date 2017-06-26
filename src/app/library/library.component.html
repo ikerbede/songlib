@@ -1,4 +1,8 @@
-<md-list class="sl-library">
+<md-card id="sl-search">
+  <md-icon svgIcon="search"></md-icon>
+  <input placeholder="Search" [(ngModel)]="searchInput">
+</md-card>
+<md-list id="sl-library">
   <md-list-item *ngFor="let song of songs">
     <sl-song (selectedSong)="addSelectedSong(song)" [song]="song"></sl-song>
   </md-list-item>

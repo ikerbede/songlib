@@ -1,3 +1,21 @@
+#sl-search {
+  display: flex;
+  align-items: center;
+
+  md-icon {
+    color: #666;
+  }
+  input {
+    border: none;
+    font-size: 20px;
+    color: #434343;
+    margin-left: 10px;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+
 md-list-item {
   height: 61px;
 }
