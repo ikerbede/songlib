@@ -1,7 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+}                      from '@angular/core';
 
-import { IconService } from '../shared/icon.service';
-import { User } from '../user/user';
+import { IconService } from 'app/shared/icon.service';
+import { User }        from 'app/user/user';
+import { LibraryModeEnum } from 'app/library/shared/library-mode.enum';
 
 @Component({
   selector: 'sl-drawer',
@@ -10,6 +17,7 @@ import { User } from '../user/user';
 })
 export class DrawerComponent implements OnInit {
   @Input() user: User;
+  @Output() libraryModeEvent: EventEmitter<any>;
 
   constructor(private iconService: IconService) {
     iconService.addSvgIcons([
@@ -19,11 +27,20 @@ export class DrawerComponent implements OnInit {
       'library_music',
       'star'
     ]);
+    this.libraryModeEvent = new EventEmitter();
   }
 
   ngOnInit() {}
 
-  logOut() {
+  public displayHits() {
+    this.libraryModeEvent.emit(LibraryModeEnum.HITS);
+  }
+
+  public displayFavorites() {
+    this.libraryModeEvent.emit(LibraryModeEnum.FAVORITES);
+  }
+
+  public logOut() {
     console.log('User logged out!')
   }
 

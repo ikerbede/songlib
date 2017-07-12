@@ -7,11 +7,11 @@
   </md-toolbar-row>
 </md-toolbar>
 <md-list id="sl-drawer-content">
-  <md-list-item>
+  <md-list-item (click)="displayHits()">
     <md-icon svgIcon="star" md-list-icon></md-icon>
     <h3 md-line>Most listened</h3>
   </md-list-item>
-  <md-list-item>
+  <md-list-item (click)="displayFavorites()">
     <md-icon svgIcon="favorite" md-list-icon></md-icon>
     <h3 md-line>Favorites</h3>
   </md-list-item>

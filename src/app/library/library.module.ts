@@ -1,17 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { NgModule }         from '@angular/core';
+import { CommonModule }     from '@angular/common';
+import { FormsModule }      from '@angular/forms';
 
 import {
   MdIconModule,
   MdCardModule,
   MdButtonModule,
-  MdListModule
-} from '@angular/material';
+  MdListModule,
+  MdDialogModule,
+  MdInputModule
+}                           from '@angular/material';
 
-import { SongLibraryComponent } from './library.component';
-import { SongComponent } from './song/song.component';
-
+import { LibraryComponent } from './library.component';
+import { SongComponent }    from './song/song.component';
+import { SongAdderComponent } from './song-adder/song-adder.component';
 
 @NgModule({
   imports: [
@@ -20,14 +22,20 @@ import { SongComponent } from './song/song.component';
     MdIconModule,
     MdCardModule,
     MdButtonModule,
-    MdListModule
+    MdListModule,
+    MdDialogModule,
+    MdInputModule
   ],
   declarations: [
-    SongLibraryComponent,
-    SongComponent
+    LibraryComponent,
+    SongComponent,
+    SongAdderComponent
+  ],
+  entryComponents: [
+    SongAdderComponent
   ],
   exports: [
-    SongLibraryComponent
+    LibraryComponent
   ]
 })
-export class SongLibraryModule { }
+export class LibraryModule { }

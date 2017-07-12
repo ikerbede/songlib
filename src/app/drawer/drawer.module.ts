@@ -1,6 +1,6 @@
 // Angular
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule }        from '@angular/core';
+import { CommonModule }    from '@angular/common';
 
 // Material
 import {
@@ -8,7 +8,7 @@ import {
   MdButtonModule,
   MdToolbarModule,
   MdListModule
-} from '@angular/material';
+}                          from '@angular/material';
 
 // Custom
 import { DrawerComponent } from './drawer.component';

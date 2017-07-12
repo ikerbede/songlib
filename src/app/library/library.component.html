@@ -1,9 +1,14 @@
 <md-card id="sl-search">
   <md-icon svgIcon="search"></md-icon>
-  <input placeholder="Search" [(ngModel)]="searchInput">
+  <input placeholder="Search" (input)="filterSearch($event.target.value)">
 </md-card>
 <md-list id="sl-library">
-  <md-list-item *ngFor="let song of songs">
+  <md-list-item *ngFor="let song of filteredSongs">
     <sl-song (selectedSong)="addSelectedSong(song)" [song]="song"></sl-song>
   </md-list-item>
 </md-list>
+<div id="sl-library-footer">
+  <button md-fab id="sl-action-addSong" (click)="displaySongAdder()">
+    <md-icon svgIcon="add"></md-icon>
+  </button>
+</div>
